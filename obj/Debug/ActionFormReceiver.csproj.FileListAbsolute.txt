@@ -1,0 +1,5 @@
+C:\websites\dnndev.me\bin\ActionFormReceiver.dll
+C:\websites\dnndev.me\bin\ActionFormReceiver.pdb
+C:\websites\dnndev.me\DesktopModules\ActionFormReceiver\obj\Debug\ActionFormReceiver.csprojResolveAssemblyReference.cache
+C:\websites\dnndev.me\DesktopModules\ActionFormReceiver\obj\Debug\ActionFormReceiver.dll
+C:\websites\dnndev.me\DesktopModules\ActionFormReceiver\obj\Debug\ActionFormReceiver.pdb

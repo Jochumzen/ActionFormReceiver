@@ -1,0 +1,72 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="ActionFormReceiver" type="Module" version="00.00.01">
+      <friendlyName>ActionFormReceiver</friendlyName>
+      <description>Plugghest.com ActionFormReceiver module</description>
+      <iconFile>Images/icon_extensions.gif</iconFile>
+      <owner>
+        <name>Plugghest.com</name>
+        <organization>Plugghest.com</organization>
+        <url>http://www.christoc.com</url>
+        <email>modules@christoc.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">07.00.02</dependency>
+      </dependencies>
+      
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\ActionFormReceiver</basePath>
+          </scripts>
+        </component>
+
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules/ActionFormReceiver</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+
+        <component type="Module">
+          <desktopModule>
+            <moduleName>ActionFormReceiver</moduleName>
+            <foldername>ActionFormReceiver</foldername>
+            <businessControllerClass>Plugghest.Modules.ActionFormReceiver.Components.FeatureController</businessControllerClass>
+            <supportedFeatures />
+            <moduleDefinitions>
+              <moduleDefinition>
+                <friendlyName>ActionFormReceiver</friendlyName>
+                <defaultCacheTime>0</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey />
+                    <controlSrc>DesktopModules/ActionFormReceiver/View.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle />
+                    <controlType>View</controlType>
+                    <iconFile />
+                    <helpUrl />
+                    <viewOrder>0</viewOrder>
+                  </moduleControl>
+                </moduleControls>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <name>ActionFormReceiver.dll</name>
+              <path>bin</path>
+            </assembly>
+          </assemblies>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
