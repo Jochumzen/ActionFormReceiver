@@ -3,3 +3,4 @@ C:\websites\dnndev.me\bin\ActionFormReceiver.pdb
 C:\websites\dnndev.me\DesktopModules\ActionFormReceiver\obj\Release\ActionFormReceiver.csprojResolveAssemblyReference.cache
 C:\websites\dnndev.me\DesktopModules\ActionFormReceiver\obj\Release\ActionFormReceiver.dll
 C:\websites\dnndev.me\DesktopModules\ActionFormReceiver\obj\Release\ActionFormReceiver.pdb
+C:\websites\dnndev.me\bin\ActionFormReceiver.dll.config

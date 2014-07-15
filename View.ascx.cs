@@ -52,6 +52,9 @@ namespace Plugghest.Modules.ActionFormReceiver
                     case "CreatePlugg":
                         CreatePlugg();
                         break;
+                    case "CreateCourse":
+                        CreateCourse();
+                        break;
                 }
             }
             catch (Exception exc) //Module failed to load
@@ -92,6 +95,40 @@ namespace Plugghest.Modules.ActionFormReceiver
             BaseHandler bh = new BaseHandler();
             bh.CreateBasicPlugg(pc);
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(pc.ThePlugg.TabId, "", "edit=0"));
+        }
+
+        private void CreateCourse()
+        {
+            string cultureCode = (Page as DotNetNuke.Framework.PageBase).PageCulture.Name;
+            CourseContainer cc = new CourseContainer(cultureCode);
+            cc.TheCourse.CreatedByUserId = UserId;
+            cc.TheCourse.ModifiedByUserId = UserId;
+            cc.TheCourse.CourseId = 0;
+            cc.TheCourse.CreatedInCultureCode = cultureCode;
+            cc.SetTitle(nvc["Title"]);
+            //string subjectStr = Page.Request.QueryString["s"];
+            //if (subjectStr != null)
+            //{
+            //    int subid = Convert.ToInt32(subjectStr);
+            //    pc.ThePlugg.SubjectId = subid;
+            //}
+            //else
+            //    pc.ThePlugg.SubjectId = 0;
+            cc.TheCourse.SubjectId = 0;
+            if (nvc["Description"] != "")
+                cc.SetDescription(nvc["Description"]);
+            switch (nvc["Whocanedit"])
+            {
+                case "Only me":
+                    cc.TheCourse.WhoCanEdit = EWhoCanEdit.OnlyMe;
+                    break;
+                default:
+                    cc.TheCourse.WhoCanEdit = EWhoCanEdit.Anyone;
+                    break;
+            }
+            BaseHandler bh = new BaseHandler();
+            bh.CreateCourse(cc);
+            Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(cc.TheCourse.TabId, "", "edit=0"));
         }
 
         public ModuleActionCollection ModuleActions
