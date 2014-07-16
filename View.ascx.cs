@@ -83,15 +83,7 @@ namespace Plugghest.Modules.ActionFormReceiver
             pc.ThePlugg.SubjectId = 0;
             if (nvc["Description"] != "")
                 pc.SetDescription(nvc["Description"]);
-            switch (nvc["Whocanedit"])
-            {
-                case "Only me":
-                    pc.ThePlugg.WhoCanEdit = EWhoCanEdit.OnlyMe;
-                    break;
-                default:
-                    pc.ThePlugg.WhoCanEdit = EWhoCanEdit.Anyone ;
-                    break;
-            }
+            pc.ThePlugg.WhoCanEdit = EWhoCanEdit.Anyone;
             BaseHandler bh = new BaseHandler();
             bh.CreateBasicPlugg(pc);
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(pc.ThePlugg.TabId, "", "edit=0"));
@@ -117,15 +109,7 @@ namespace Plugghest.Modules.ActionFormReceiver
             cc.TheCourse.SubjectId = 0;
             if (nvc["Description"] != "")
                 cc.SetDescription(nvc["Description"]);
-            switch (nvc["Whocanedit"])
-            {
-                case "Only me":
-                    cc.TheCourse.WhoCanEdit = EWhoCanEdit.OnlyMe;
-                    break;
-                default:
-                    cc.TheCourse.WhoCanEdit = EWhoCanEdit.Anyone;
-                    break;
-            }
+            cc.TheCourse.WhoCanEdit = EWhoCanEdit.Anyone;
             BaseHandler bh = new BaseHandler();
             bh.CreateCourse(cc);
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(cc.TheCourse.TabId, "", "edit=0"));
