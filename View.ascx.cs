@@ -21,6 +21,7 @@ using DotNetNuke.Services.Localization;
 using DotNetNuke.UI.Utilities;
 using System.Collections.Specialized;
 using Plugghest.Base2;
+using System.Web;
 
 
 namespace Plugghest.Modules.ActionFormReceiver
@@ -71,7 +72,7 @@ namespace Plugghest.Modules.ActionFormReceiver
             pc.ThePlugg.ModifiedByUserId = UserId;
             pc.ThePlugg.PluggId = 0;
             pc.ThePlugg.CreatedInCultureCode = cultureCode;
-            pc.SetTitle(nvc["Title"]);
+            pc.SetTitle(HttpUtility.HtmlEncode(nvc["Title"]));
             //string subjectStr = Page.Request.QueryString["s"];
             //if (subjectStr != null)
             //{
@@ -82,7 +83,7 @@ namespace Plugghest.Modules.ActionFormReceiver
             //    pc.ThePlugg.SubjectId = 0;
             pc.ThePlugg.SubjectId = 0;
             if (nvc["Description"] != "")
-                pc.SetDescription(nvc["Description"]);
+                pc.SetDescription(HttpUtility.HtmlEncode(nvc["Description"]));
             pc.ThePlugg.WhoCanEdit = EWhoCanEdit.Anyone;
             BaseHandler bh = new BaseHandler();
             bh.CreateBasicPlugg(pc);
@@ -97,7 +98,7 @@ namespace Plugghest.Modules.ActionFormReceiver
             cc.TheCourse.ModifiedByUserId = UserId;
             cc.TheCourse.CourseId = 0;
             cc.TheCourse.CreatedInCultureCode = cultureCode;
-            cc.SetTitle(nvc["Title"]);
+            cc.SetTitle(HttpUtility.HtmlEncode(nvc["Title"]));
             //string subjectStr = Page.Request.QueryString["s"];
             //if (subjectStr != null)
             //{
@@ -108,7 +109,7 @@ namespace Plugghest.Modules.ActionFormReceiver
             //    pc.ThePlugg.SubjectId = 0;
             cc.TheCourse.SubjectId = 0;
             if (nvc["Description"] != "")
-                cc.SetDescription(nvc["Description"]);
+                cc.SetDescription(HttpUtility.HtmlEncode(nvc["Description"]));
             cc.TheCourse.WhoCanEdit = EWhoCanEdit.Anyone;
             BaseHandler bh = new BaseHandler();
             bh.CreateCourse(cc);
